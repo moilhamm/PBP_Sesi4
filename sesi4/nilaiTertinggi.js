@@ -5,16 +5,13 @@ let studentsScore = [
   { name: "Dira", score: 100 },
 ];
 
-// anggap siswa pertama sebagai nilai tertinggi sementara
-let tertinggi = studentsScore[0];
+// urutkan nilai dari tertinggi ke terendah
+studentsScore.sort((a, b) => b.score - a.score);
 
-// cek siswa berikutnya, kalau nilainya lebih besar maka gantikan
-for (let i = 1; i < studentsScore.length; i++) {
-  if (studentsScore[i].score > tertinggi.score) {
-    tertinggi = studentsScore[i];
-  }
+// tampilkan semua siswa berdasarkan urutan nilai
+for (let i = 0; i < studentsScore.length; i++) {
+  console.log("Peringkat " + (i + 1));
+  console.log("Nama  : " + studentsScore[i].name);
+  console.log("Nilai : " + studentsScore[i].score);
+  console.log("----------------");
 }
-
-// tampilkan nama dan nilai siswa tertinggi
-console.log("Nama  : " + tertinggi.name);
-console.log("Nilai : " + tertinggi.score);
